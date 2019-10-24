@@ -46,6 +46,6 @@ class ContainersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def container_params
-      params.require(:container_item).permit(:container_id, :name)
+      params.require(:container_item).permit(:container_id, :name, :user_id)
     end
 end
