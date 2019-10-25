@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2019_07_22_133237) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "container_items", force: :cascade do |t|
-    t.integer "container_id"
+    t.bigint "container_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,8 +24,8 @@ ActiveRecord::Schema.define(version: 2019_07_22_133237) do
   end
 
   create_table "containers", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "parent_id"
+    t.bigint "user_id", null: false
+    t.bigint "parent_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
